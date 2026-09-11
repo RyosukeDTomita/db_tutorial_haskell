@@ -1,0 +1,42 @@
+cabal-version:      3.0
+name:               hsdb
+version:            0.1.0.0
+synopsis:           A sqlite-like database in Haskell, following cstack's db_tutorial
+license:            MIT
+author:             RyosukeDTomita
+build-type:         Simple
+
+common warnings
+    ghc-options: -Wall
+
+library
+    import:           warnings
+    exposed-modules:  Db
+    hs-source-dirs:   src
+    build-depends:    base
+                    , bytestring
+                    , containers
+                    , vector
+    default-language: GHC2021
+
+executable hsdb
+    import:           warnings
+    main-is:          Main.hs
+    hs-source-dirs:   app
+    build-depends:    base
+                    , hsdb
+                    , bytestring
+    default-language: GHC2021
+
+test-suite hsdb-test
+    import:           warnings
+    type:             exitcode-stdio-1.0
+    main-is:          Spec.hs
+    hs-source-dirs:   test
+    build-depends:    base
+                    , hsdb
+                    , bytestring
+                    , hspec
+                    , process
+                    , directory
+    default-language: GHC2021
