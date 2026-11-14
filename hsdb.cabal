@@ -13,7 +13,7 @@ library
     import:           warnings
     exposed-modules:  Db
     hs-source-dirs:   src
-    build-depends:    base
+    build-depends:    base >=4.21 && <5
                     , bytestring
                     , containers
                     , vector
@@ -23,7 +23,7 @@ executable hsdb
     import:           warnings
     main-is:          Main.hs
     hs-source-dirs:   app
-    build-depends:    base
+    build-depends:    base >=4.21 && <5
                     , hsdb
                     , bytestring
     default-language: GHC2021
@@ -33,7 +33,7 @@ test-suite hsdb-test
     type:             exitcode-stdio-1.0
     main-is:          Spec.hs
     hs-source-dirs:   test
-    build-depends:    base
+    build-depends:    base >=4.21 && <5
                     , hsdb
                     , bytestring
                     , hspec

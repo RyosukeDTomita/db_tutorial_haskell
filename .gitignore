@@ -1,7 +1,7 @@
 # REPLが生成するDBファイル
 *.db
-# direnv / nix
 .direnv/
+# nix build の成果物シンボリックリンク
 result
 result-*
 # https://github.com/github/gitignore/blob/main/Haskell.gitignore

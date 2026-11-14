@@ -1,0 +1,11 @@
+-- プロジェクト用 GHCi 設定。`nix develop --command ghci` で起動すると読み込まれる。
+:set -isrc
+:set -XOverloadedStrings
+
+-- src/Db.hs を読み込んでエクスポート関数をスコープに入れる。
+-- (未ロードの home モジュールは import だけでは入らないため :add を使う)
+:add Db
+
+-- このプロジェクト(src/app/test)で実際に使うモジュールだけを import する。
+-- (.ghci は ImportQualifiedPost を有効にしていないため qualified は前置形で書く)
+import Test.Hspec
